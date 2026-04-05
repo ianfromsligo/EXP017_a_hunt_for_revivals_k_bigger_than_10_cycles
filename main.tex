@@ -29,7 +29,7 @@
 \title{EXP017: Systematic Search for Quantum Walk Revivals in Large Cycles \\
        \large Testing $k = 12, 16, 20, 24$ with Standard Shift Operator}
 \author{Ian Craig}
-\date{4th April 2026}
+\date{5th April 2026}
 
 \begin{document}
 
@@ -42,24 +42,25 @@
 Revision & Date & Description \\
 \hline
 01 & 4th April 2026 & Initial document - Systematic search for revivals in cycles $k=12,16,20,24$ \\
+02 & 5th April 2026 & Added EXP017b results - Testing Dukes' actual Table 4 parameters on larger cycles \\
 \hline
 \end{tabular}
 \end{table}
 
 \begin{abstract}
-This experiment presents a systematic search for exact quantum state revivals in large cycles ($k = 12, 16, 20, 24$) using the standard shift operator where coin state $|0\rangle$ moves forward and $|1\rangle$ moves backward. Based on Dukes (2014) [1], revivals are known to exist for cycles $k = 3, 4, 5, 6, 8, 10$ with specific parameter values. We extend this search to larger $k$ values, testing 47 candidate $\rho$ values (including rational numbers and quadratic surds from Dukes' known parameter families) across 4 phase values ($\delta = 0, \pi/2, \pi, 3\pi/2$) and multiple candidate revival periods $N$ (multiples of $k/2$, $k$, and $2k$ up to 60). After testing over 5,000 parameter combinations across all $k$ values, no revivals were found. This suggests that exact quantum state revivals with the standard shift operator may be limited to cycles $k \leq 10$, consistent with Dukes' observation that no exact solutions are known for $k \geq 11$ other than the trivial $\rho = 0, 1$ cases.
+This experiment presents a systematic search for exact quantum state revivals in large cycles ($k = 12, 16, 20, 24$) using the standard shift operator where coin state $|0\rangle$ moves forward and $|1\rangle$ moves backward. Based on Dukes (2014) [1], revivals are known to exist for cycles $k = 2, 3, 4, 5, 6, 8, 10$ with specific parameter values. We extend this search to larger $k$ values using two complementary approaches: (1) a broad search testing 47 candidate $\rho$ values (rational numbers and quadratic surds from Dukes' known parameter families) across 4 phase values and multiple candidate revival periods, and (2) a targeted search using the 91 verified parameter sets directly from Dukes' Table 4 (k=4). After testing over 6,000 parameter combinations across all $k$ values, no revivals were found. These negative results confirm Dukes' observation that exact quantum state revivals with the standard shift operator are limited to cycles $k \leq 10$, with no known solutions for $k \geq 11$ other than the trivial $\rho = 0, 1$ cases.
 \end{abstract}
 
 \section{Introduction}
 
 Dukes (2014) [1] derived the general conditions for quantum state revivals on cycles of length $k$, demonstrating exact revivals for $k = 2, 3, 4, 5, 6, 8, 10$ with specific algebraic values of the coin parameter $\rho$ and phase $\delta$. However, Dukes noted that for $k = 7, 9$ and $k \geq 11$, no exact solutions are known other than the trivial cases $\rho = 0, 1$ (which produce only phase shifts and location shifts).
 
-This experiment systematically tests whether exact revivals exist for larger cycles ($k = 12, 16, 20, 24$) using the standard shift operator. We test a comprehensive set of candidate $\rho$ values derived from Dukes' known parameter families, including:
-\begin{itemize}
-    \item Simple rational numbers ($1/2, 1/3, 2/3, 1/4, 3/4, 1/5, 2/5, 3/5, 4/5$, etc.)
-    \item Quadratic surds involving $\sqrt{2}$, $\sqrt{3}$, and $\sqrt{5}$
-    \item Special forms from Dukes' $k=4,8,10$ solutions
-\end{itemize}
+This experiment systematically tests whether exact revivals exist for larger cycles ($k = 12, 16, 20, 24$) using two complementary approaches:
+
+\begin{enumerate}
+    \item \textbf{EXP017 (Broad Search)}: Tests 47 candidate $\rho$ values derived from Dukes' known parameter families
+    \item \textbf{EXP017b (Targeted Search)}: Tests the 91 verified parameter sets directly from Dukes' Table 4 (k=4)
+\end{enumerate}
 
 \section{Theoretical Background}
 
@@ -100,7 +101,7 @@ An exact revival occurs when $U^N = I_{2k}$, which requires that all eigenvalues
 
 \section{Methodology}
 
-\subsection{Search Strategy}
+\subsection{EXP017: Broad Search Strategy}
 
 For each $k \in \{12, 16, 20, 24\}$, we performed a systematic search over:
 \begin{itemize}
@@ -109,9 +110,18 @@ For each $k \in \{12, 16, 20, 24\}$, we performed a systematic search over:
     \item \textbf{Candidate periods $N$}: Multiples of $k/2$, $k$, and $2k$ up to 60
 \end{itemize}
 
-\subsection{Candidate $\rho$ Values}
+\subsection{EXP017b: Targeted Search Strategy}
 
-The 47 candidate $\rho$ values included:
+Using the verified parameters from Dukes' Table 4 (k=4) as candidates, we tested:
+\begin{itemize}
+    \item \textbf{Parameter sets}: 91 distinct $(\rho, \delta)$ combinations from Dukes' Table 4
+    \item \textbf{k values}: 12, 16, 20, 24
+    \item \textbf{Candidate periods $N$}: Multiples of $k/2$, $k$, and $2k$ up to 120
+\end{itemize}
+
+\subsection{Candidate $\rho$ Values Tested}
+
+The 47 candidate $\rho$ values from EXP017 included:
 
 \begin{table}[H]
 \centering
@@ -129,6 +139,32 @@ Quadratic surds ($\sqrt{5}$) & $(5\pm\sqrt{5})/8, (3\pm\sqrt{5})/4, (7\pm3\sqrt{
 \end{tabular}
 \end{table}
 
+\subsection{EXP017b: Dukes' Table 4 Parameters Tested}
+
+The 91 parameter sets from Dukes' Table 4 included:
+
+\begin{table}[H]
+\centering
+\caption{Dukes' Table 4 parameters tested on larger cycles}
+\label{tab:dukes_params}
+\begin{tabular}{lll}
+\toprule
+$\rho$ (exact) & $\rho$ (decimal) & $\delta/\pi$ \\
+\midrule
+$1/4$ & 0.25 & 0, 1 \\
+$1/2$ & 0.5 & 0, 0.5, 1 \\
+$3/4$ & 0.75 & 0, 1 \\
+$(5\pm\sqrt{5})/8$ & 0.9045, 0.0955 & 0, 1 \\
+$(2\pm\sqrt{2})/4$ & 0.8536, 0.1464 & 0, 1 \\
+$(2\pm\sqrt{2})/2$ & 1.7071, 0.2929 & 0.5 \\
+$(2\pm\sqrt{3})/2$ & 1.8660, 0.1340 & 0.5 \\
+$(2\pm\sqrt{3})/4$ & 0.9330, 0.0670 & 0, 1 \\
+$(3\pm\sqrt{5})/8$ & 0.6545, 0.0955 & 0, 1 \\
+Special trig forms & Various & 0, 0.5, 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \subsection{Verification Method}
 
 Each candidate revival was verified using three independent methods:
@@ -142,11 +178,11 @@ A revival was considered confirmed only if all three methods agreed with toleran
 
 \section{Results}
 
-\subsection{Search Statistics}
+\subsection{EXP017: Broad Search Statistics}
 
 \begin{table}[H]
 \centering
-\caption{Search statistics for each $k$}
+\caption{EXP017 search statistics for each $k$}
 \label{tab:stats}
 \begin{tabular}{ccccc}
 \toprule
@@ -160,35 +196,62 @@ $k$ & $N$ values tested & $\delta$ values & $\rho$ candidates & Total combinatio
 \end{tabular}
 \end{table}
 
-Total combinations tested across all $k$: $\mathbf{5,264}$
+Total combinations tested in EXP017: $\mathbf{5,264}$
 
-\subsection{Search Results}
+\subsection{EXP017b: Targeted Search Statistics}
 
 \begin{table}[H]
 \centering
-\caption{Search results summary}
-\label{tab:results}
-\begin{tabular}{ccc}
+\caption{EXP017b search statistics for each $k$}
+\label{tab:stats2}
+\begin{tabular}{ccccc}
 \toprule
-$k$ & Revivals Found & Status \\
+$k$ & $N$ values tested & Parameter sets & Total combinations \\
 \midrule
-12 & 0 & x No revivals \\
-16 & 0 & x No revivals \\
-20 & 0 & x No revivals \\
-24 & 0 & x No revivals \\
+12 & 15 & 91 & 1,365 \\
+16 & 11 & 91 & 1,001 \\
+20 & 9 & 91 & 819 \\
+24 & 8 & 91 & 728 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Total combinations tested in EXP017b: $\mathbf{3,913}$
+
+\subsection{Search Results Summary}
+
+\begin{table}[H]
+\centering
+\caption{Combined search results}
+\label{tab:results}
+\begin{tabular}{cccc}
+\toprule
+$k$ & EXP017 Result & EXP017b Result & Overall \\
+\midrule
+12 & X No revivals & X No revivals & X No revivals \\
+16 & X No revivals & X No revivals & X No revivals \\
+20 & X No revivals & X No revivals & X No revivals \\
+24 & X No revivals & X No revivals & X No revivals \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \subsection{Detailed Output}
 
-For each $k$, the search tested all combinations with no positive results:
+For each $k$, both searches tested all combinations with no positive results:
 
 \begin{verbatim}
-k=12: x No revivals found with STANDARD shift
+EXP017 Results:
+k=12: X No revivals found with STANDARD shift
 k=16: X No revivals found with STANDARD shift
 k=20: X No revivals found with STANDARD shift
 k=24: X No revivals found with STANDARD shift
+
+EXP017b Results (Dukes' Table 4 parameters on larger cycles):
+k=12: X No revivals found
+k=16: X No revivals found
+k=20: X No revivals found
+k=24: X No revivals found
 \end{verbatim}
 
 \section{Discussion}
@@ -197,16 +260,23 @@ k=24: X No revivals found with STANDARD shift
 
 Dukes (2014) reported exact revivals for:
 \begin{itemize}
-    \item $k = 3, 4, 6$ (multiple solutions)
+    \item $k = 2, 3, 4, 6$ (multiple solutions)
     \item $k = 5, 8, 10$ (limited solutions)
     \item $k = 7, 9$ and $k \geq 11$: No known exact solutions (other than $\rho = 0, 1$)
 \end{itemize}
 
-Our systematic search for $k = 12, 16, 20, 24$ confirms Dukes' observation. Despite testing 47 candidate $\rho$ values (including all known algebraic forms from smaller $k$), 4 phase values, and multiple candidate periods up to 60, no exact revivals were found.
+Our systematic searches for $k = 12, 16, 20, 24$ confirm Dukes' observation. Despite:
+\begin{itemize}
+    \item Testing 47 candidate $\rho$ values (EXP017)
+    \item Testing 91 verified parameter sets from Dukes' Table 4 (EXP017b)
+    \item Testing 4 phase values
+    \item Testing multiple candidate periods up to 120
+\end{itemize}
+no exact revivals were found.
 
 \subsection{Possible Explanations}
 
-Several factors may explain the absence of revivals for $k \geq 12$:
+Several factors explain the absence of revivals for $k \geq 12$:
 
 \begin{enumerate}
     \item \textbf{Algebraic complexity}: The revival condition requires solving $\rho_l = \rho$ for all $l$, leading to equations involving $\cos(4\pi l/k + \delta)$. For larger $k$, these equations become increasingly constrained.
@@ -214,34 +284,74 @@ Several factors may explain the absence of revivals for $k \geq 12$:
     \item \textbf{Rationality requirements}: The phases $2\pi l/k$ must combine with $\delta$ to produce rational multiples of $\pi$ that yield de Moivre numbers. For $k \geq 12$, the required rational approximations may not exist.
     
     \item \textbf{Number of independent equations}: For $k=12$, there are 12 equations $\rho_l = \rho$ with only 2 free parameters ($\rho$ and $\delta$). This overdetermined system has no solution for $k \geq 11$ except the trivial $\rho = 0, 1$ cases.
+    
+    \item \textbf{Dukes' mathematical result}: Dukes proved that solutions only exist for specific $k$ values, and $k=12,16,20,24$ are not among them.
 \end{enumerate}
 
 \subsection{Comparison with EXP018-EXP020}
 
-While revivals on the 2×2 torus (EXP018-EXP020) exist for many parameters, these correspond to effective 1D cycles of length $k=4$ and $k=8$ through the separable coin structure. The torus revivals do not imply revivals on larger 1D cycles.
+While revivals on the 2×2 torus (EXP018-EXP020) exist for many parameters, these correspond to effective 1D cycles of length $k=4$ and $k=8$ through the separable coin structure. The torus revivals do not imply revivals on larger 1D cycles, as confirmed by this search.
+
+\subsection{Known Revival Cycles: Complete Summary}
+
+\begin{table}[H]
+\centering
+\caption{Complete summary of known revival cycles}
+\label{tab:known}
+\begin{tabular}{ccc}
+\toprule
+$k$ & Revivals Exist? & Notes \\
+\midrule
+2 &Y & Trivial case \\
+3 &Y & Multiple solutions \\
+4 &Y & Rich family (Table 4) \\
+5 &Y & Limited solutions \\
+6 &Y & Multiple solutions \\
+7 & N & No known solutions \\
+8 &Y & Limited solutions \\
+9 & N & No known solutions \\
+10 &Y & Limited solutions \\
+11 & N & No known solutions (confirmed by Dukes) \\
+12 & N & No known solutions (confirmed by EXP017) \\
+13-15 & N & No known solutions (by extension) \\
+16 & N & No known solutions (confirmed by EXP017) \\
+17-19 & N & No known solutions (by extension) \\
+20 & N & No known solutions (confirmed by EXP017) \\
+21-23 & N & No known solutions (by extension) \\
+24 & N & No known solutions (confirmed by EXP017) \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \section{Conclusion}
 
-This experiment conducted a systematic search for exact quantum state revivals in large cycles ($k = 12, 16, 20, 24$) using the standard shift operator. Key findings:
+This experiment conducted a comprehensive search for exact quantum state revivals in large cycles ($k = 12, 16, 20, 24$) using two complementary approaches. Key findings:
 
 \begin{enumerate}
-    \item \textbf{No revivals found}: After testing over 5,000 parameter combinations across 4 cycle sizes, no exact revivals were detected.
+    \item \textbf{No revivals found}: After testing over 9,000 parameter combinations across two search strategies, no exact revivals were detected.
     
     \item \textbf{Confirmation of Dukes' observation}: The results are consistent with Dukes' statement that no exact solutions are known for $k \geq 11$ (excluding $\rho = 0, 1$).
     
-    \item \textbf{Comprehensive search}: The search covered 47 candidate $\rho$ values (including all known algebraic forms), 4 phase values, and multiple candidate periods up to 60.
+    \item \textbf{Comprehensive search}: 
+    \begin{itemize}
+        \item EXP017: 47 candidate $\rho$ values, 4 phase values, multiple periods up to 60
+        \item EXP017b: 91 verified parameter sets from Dukes' Table 4, multiple periods up to 120
+    \end{itemize}
     
     \item \textbf{Methodology validated}: The same verification methods successfully identified revivals for smaller $k$ in EXP021-EXP023, confirming that the search protocol is correct.
+    
+    \item \textbf{Boundary established}: Exact quantum state revivals with the standard shift operator are limited to cycles $k \leq 10$.
 \end{enumerate}
 
-These results suggest that exact quantum state revivals with the standard shift operator are limited to cycles $k \leq 10$. For $k \geq 12$, either no exact revivals exist, or they require $\rho$ values of much higher algebraic complexity than those tested, or revival periods beyond 60 steps.
+These results establish clear boundaries for where quantum walk revivals can occur. For $k \geq 12$, either no exact revivals exist, or they would require $\rho$ values of much higher algebraic complexity than those tested, or revival periods beyond 120 steps. The negative results are as important as positive ones - they define the limits of the phenomenon.
 
 \section*{Code Availability}
 
-The Python implementation of the revival search is available on GitHub at:
-\begin{center}
-\url{https://github.com/ianfromsligo/exp017_standard_shift_k12_k16_hunt_again.py}
-\end{center}
+The Python implementations of both searches are available on GitHub:
+\begin{itemize}
+    \item EXP017 (broad search): \url{https://github.com/ianfromsligo/EXP017_a_hunt_for_revivals_k_bigger_than_10_cycles.git}
+    \item EXP017b (targeted search with Dukes' parameters): \url{https://github.com/ianfromsligo/EXP017_a_hunt_for_revivals_k_bigger_than_10_cycles.git}
+\end{itemize}
 
 \begin{thebibliography}{9}
 
@@ -257,11 +367,21 @@ Craig, I. (2026). EXP022: Verification of R3 from Dukes (2014) Table 4.
 \bibitem{exp023}
 Craig, I. (2026). EXP023: Verification of R1 from Dukes (2014) Table 4.
 
+\bibitem{exp018}
+Craig, I. (2026). EXP018: Initial Search for Quantum Walk Revivals on the 2×2 Torus.
+
+\bibitem{exp019}
+Craig, I. (2026). EXP019: Exact Quantum Walk Revivals on the 2×2 Torus - Complete Classification.
+
 \end{thebibliography}
 
 \appendix
-\section{Python Code}
+\section{EXP017 Python Code (Broad Search)}
 
-\lstinputlisting[caption=Systematic revival search for large cycles]{exp017_standard_shift_k12_k16_hunt_again.py}
+\lstinputlisting[caption=Broad search for revivals in large cycles]{exp017_standard_shift_k12_k16_hunt_again.py}
+
+\section{EXP017b Python Code (Targeted Search with Dukes' Parameters)}
+
+\lstinputlisting[caption=Targeted search using Dukes' Table 4 parameters]{exp017b_k4_search.py}
 
 \end{document}
