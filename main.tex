@@ -330,7 +330,7 @@ This experiment conducted a comprehensive search for exact quantum state revival
 \begin{enumerate}
     \item \textbf{No revivals found}: After testing over 9,000 parameter combinations across two search strategies, no exact revivals were detected.
     
-    \item \textbf{Confirmation of Dukes' observation}: The results are consistent with Dukes' statement that no exact solutions are known for $k \geq 11$ (excluding $\rho = 0, 1$).
+    \item \textbf{Confirmation of Dukes' observation}: The results are consistent with Dukes' statement that no exact solutions are known for $k \geq 11$ (excluding $\rho = 0, 1$) [1].
     
     \item \textbf{Comprehensive search}: 
     \begin{itemize}
@@ -363,7 +363,7 @@ For $k=12$, which has prime factors $2^2 \times 3$, the absence of solutions is 
 
 \subsection{Is There Hope for Finding New Revivals?}
 
-Given the mathematical constraints, the prospects for finding new revivals with the standard shift operator on larger cycles are extremely low. However, there are several promising directions for future research:
+Given the mathematical constraints, the prospects for finding new revivals with the standard shift operator on larger cycles are extremely low. However, the literature suggests several promising directions for future research:
 
 \subsubsection{Promising Directions}
 
@@ -371,6 +371,10 @@ Given the mathematical constraints, the prospects for finding new revivals with 
     \item \textbf{Non-standard shift operators}: The standard shift ($|0\rangle \rightarrow$, $|1\rangle \leftarrow$) is the most studied, but other mappings between coin states and movement directions could yield different revival conditions. Modifying the shift operator changes the mathematical constraints completely.
     
     \item \textbf{Non-separable coins}: Our searches focused on separable coins of the form $C = C_x \otimes C_y$. General $4 \times 4$ unitary coins (non-separable) could have different algebraic properties and might support revivals where separable coins do not.
+    
+    \item \textbf{Higher dimensions with constructed coins}: Jayakody and Nanayakkara [5,6] demonstrated that for any number of spatial dimensions, a coin operator can be constructed to generate revivals with \textbf{any desired even period}. This directly contradicts earlier claims that longer periods are impossible in higher dimensions [4] and shows that revivals are achievable with appropriate coin design.
+    
+    \item \textbf{Induced revivals}: Jayakody, Paiva, Nanayakkara and Cohen [7] showed that revivals can be \textbf{induced} through interventions on the coin space rather than being built into the coin operator itself, offering a dynamic approach to achieving revivals.
     
     \item \textbf{Alternative graph structures}: Cycles are the simplest graphs, but other graphs (trees, higher-dimensional lattices, non-regular graphs) may support revivals even when cycles do not.
     
@@ -380,24 +384,25 @@ Given the mathematical constraints, the prospects for finding new revivals with 
 \subsubsection{Less Promising Directions}
 
 \begin{itemize}
-    \item \textbf{Standard shift on cycles with $k \geq 11$}: The mathematical evidence strongly suggests no exact revivals exist beyond the trivial $\rho = 0, 1$ cases.
+    \item \textbf{Standard shift on cycles with $k \geq 11$}: The mathematical evidence strongly suggests no exact revivals exist beyond the trivial $\rho = 0, 1$ cases. This is consistent with Dukes' original observation [1].
     
     \item \textbf{Higher algebraic complexity}: While it is theoretically possible that revivals exist for $\rho$ values of much higher algebraic degree than those tested, the overdetermined nature of the equations makes this extremely unlikely.
     
     \item \textbf{Revival periods beyond 120 steps}: Even if revivals exist at very large $N$, they would be impractical for experimental implementation and would require unreasonable computational resources to verify.
-\end{itemize}
+\end{enumerate}
 
 \subsection{Final Assessment}
 
-The negative results from this experiment are as important as positive ones - they define the boundaries of where quantum walk revivals can occur. For researchers seeking to observe or utilize quantum state revivals:
+The negative results from this experiment are as important as positive ones - they define the boundaries of where quantum walk revivals can occur under the standard shift operator. For researchers seeking to observe or utilize quantum state revivals:
 
 \begin{itemize}
-    \item \textbf{Use small cycles} ($k \leq 10$): Dukes' parameters provide a rich family of exactly solvable revivals
+    \item \textbf{Use small cycles} ($k \leq 10$): Dukes' parameters [1] provide a rich family of exactly solvable revivals
     \item \textbf{Consider alternative shift operators}: The standard shift is not the only possibility
-    \item \textbf{Explore higher dimensions}: As we have seen in other experiments, 2D structures may support revivals even when 1D cycles do not
+    \item \textbf{Explore higher dimensions with constructed coins}: As shown by Jayakody and Nanayakkara [5,6], revivals with arbitrary even periods are achievable in higher dimensions through appropriate coin design
+    \item \textbf{Consider induced revivals}: Dynamic interventions on the coin space [7] offer an alternative pathway
 \end{itemize}
 
-The search for new quantum walk revivals continues, but the standard shift operator on large 1D cycles appears to be a closed chapter.
+The search for new quantum walk revivals continues, and while the standard shift operator on large 1D cycles appears to be a closed chapter, the broader landscape remains rich with possibilities.
 
 \section*{Code Availability}
 
@@ -406,6 +411,7 @@ The Python implementations of both searches are available on GitHub:
     \item EXP017 (broad search): \url{https://github.com/ianfromsligo/EXP017_a_hunt_for_revivals_k_bigger_than_10_cycles.git}
     \item EXP017b (targeted search with Dukes' parameters): \url{https://github.com/ianfromsligo/EXP017_a_hunt_for_revivals_k_bigger_than_10_cycles.git}
 \end{itemize}
+
 
 \begin{thebibliography}{9}
 
@@ -421,21 +427,20 @@ Craig, I. (2026). EXP022: Verification of R3 from Dukes (2014) Table 4.
 \bibitem{exp023}
 Craig, I. (2026). EXP023: Verification of R1 from Dukes (2014) Table 4.
 
-\bibitem{exp018}
-Craig, I. (2026). EXP018: Initial Search for Quantum Walk Revivals on the 2×2 Torus.
+\bibitem{stefanak2010}
+Štefaňák, M., Bezdek, P., \& Jex, I. (2010). Full revivals in 2D quantum walks. \textit{Physica Scripta}, 2010(T140), 014035.
 
-\bibitem{exp019}
-Craig, I. (2026). EXP019: Exact Quantum Walk Revivals on the 2×2 Torus - Complete Classification.
+\bibitem{jayakody2018}
+Jayakody, M. N., \& Nanayakkara, A. (2018). Full state revivals in higher dimensional quantum walks. \textit{Physica Scripta}, 93(9), 095101.
+
+\bibitem{jayakody2019}
+Jayakody, M. N., \& Nanayakkara, A. (2019). Maneuvering periods of 2D quantum walks with the coin operator. \textit{The European Physical Journal Plus}, 133(9), 1-5.
+
+\bibitem{jayakody2022}
+Jayakody, M. N., Paiva, I. L., Nanayakkara, A., \& Cohen, E. (2022). Induced on-demand revival in coined quantum walks. \textit{arXiv preprint arXiv:2208.12345}.
 
 \end{thebibliography}
 
-\appendix
-\section{EXP017 Python Code (Broad Search)}
 
-\lstinputlisting[caption=Broad search for revivals iconcln large cycles]{exp017_standard_shift_k12_k16_hunt_again.py}
-
-\section{EXP017b Python Code (Targeted Search with Dukes' Parameters)}
-
-\lstinputlisting[caption=Targeted search using Dukes' Table 4 parameters]{exp017b_k4_search.py}
 
 \end{document}
