@@ -323,7 +323,7 @@ $k$ & Revivals Exist? & Notes \\
 \end{tabular}
 \end{table}
 
-\section{Conclusion}
+\section{Conclusion and Future Directions}
 
 This experiment conducted a comprehensive search for exact quantum state revivals in large cycles ($k = 12, 16, 20, 24$) using two complementary approaches. Key findings:
 
@@ -340,10 +340,64 @@ This experiment conducted a comprehensive search for exact quantum state revival
     
     \item \textbf{Methodology validated}: The same verification methods successfully identified revivals for smaller $k$ in EXP021-EXP023, confirming that the search protocol is correct.
     
-    \item \textbf{Boundary established}: Exact quantum state revivals with the standard shift operator are limited to cycles $k \leq 10$.
+    \item \textbf{Boundary established}: Exact quantum state revivals with the standard shift operator appear to be limited to cycles $k \leq 10$.
 \end{enumerate}
 
-These results establish clear boundaries for where quantum walk revivals can occur. For $k \geq 12$, either no exact revivals exist, or they would require $\rho$ values of much higher algebraic complexity than those tested, or revival periods beyond 120 steps. The negative results are as important as positive ones - they define the limits of the phenomenon.
+\subsection{Why Larger Cycles Likely Have No Revivals}
+
+The mathematical structure of Dukes' revival condition explains this boundary. For a cycle of length $k$, the condition requires solving:
+\[
+\rho_l = \frac{1-\cos(4\pi m_j/n_j - \delta)}{1-\cos(4\pi l/k + \delta)} = \text{constant for all } l
+\]
+
+For $k \geq 11$, this becomes an \textbf{overdetermined system} - there are $k$ equations but only 2 free parameters ($\rho$ and $\delta$). For a solution to exist, the ratios of the denominators must align perfectly with the numerators for all $l$ simultaneously. This imposes severe algebraic constraints that appear to have no solutions for $k \geq 11$.
+
+Additionally, Dukes observed a \textbf{doubling property}: when $k$ is odd, $k$ and $2k$ share the same solution set. This explains why:
+\begin{itemize}
+    \item $k=3$ works, and $k=6$ works
+    \item $k=5$ works, and $k=10$ works
+    \item But $k=4$ (even) does not simply double to $k=8$ (though $k=8$ has its own limited solutions)
+\end{itemize}
+
+For $k=12$, which has prime factors $2^2 \times 3$, the absence of solutions is consistent with this pattern.
+
+\subsection{Is There Hope for Finding New Revivals?}
+
+Given the mathematical constraints, the prospects for finding new revivals with the standard shift operator on larger cycles are extremely low. However, there are several promising directions for future research:
+
+\subsubsection{Promising Directions}
+
+\begin{enumerate}
+    \item \textbf{Non-standard shift operators}: The standard shift ($|0\rangle \rightarrow$, $|1\rangle \leftarrow$) is the most studied, but other mappings between coin states and movement directions could yield different revival conditions. Modifying the shift operator changes the mathematical constraints completely.
+    
+    \item \textbf{Non-separable coins}: Our searches focused on separable coins of the form $C = C_x \otimes C_y$. General $4 \times 4$ unitary coins (non-separable) could have different algebraic properties and might support revivals where separable coins do not.
+    
+    \item \textbf{Alternative graph structures}: Cycles are the simplest graphs, but other graphs (trees, higher-dimensional lattices, non-regular graphs) may support revivals even when cycles do not.
+    
+    \item \textbf{Continuous-time quantum walks}: The revival condition in continuous-time walks is governed by the Hamiltonian's eigenvalues rather than the unitary step operator, offering a different mathematical framework that might yield revivals for larger systems.
+\end{enumerate}
+
+\subsubsection{Less Promising Directions}
+
+\begin{itemize}
+    \item \textbf{Standard shift on cycles with $k \geq 11$}: The mathematical evidence strongly suggests no exact revivals exist beyond the trivial $\rho = 0, 1$ cases.
+    
+    \item \textbf{Higher algebraic complexity}: While it is theoretically possible that revivals exist for $\rho$ values of much higher algebraic degree than those tested, the overdetermined nature of the equations makes this extremely unlikely.
+    
+    \item \textbf{Revival periods beyond 120 steps}: Even if revivals exist at very large $N$, they would be impractical for experimental implementation and would require unreasonable computational resources to verify.
+\end{itemize}
+
+\subsection{Final Assessment}
+
+The negative results from this experiment are as important as positive ones - they define the boundaries of where quantum walk revivals can occur. For researchers seeking to observe or utilize quantum state revivals:
+
+\begin{itemize}
+    \item \textbf{Use small cycles} ($k \leq 10$): Dukes' parameters provide a rich family of exactly solvable revivals
+    \item \textbf{Consider alternative shift operators}: The standard shift is not the only possibility
+    \item \textbf{Explore higher dimensions}: As we have seen in other experiments, 2D structures may support revivals even when 1D cycles do not
+\end{itemize}
+
+The search for new quantum walk revivals continues, but the standard shift operator on large 1D cycles appears to be a closed chapter.
 
 \section*{Code Availability}
 
@@ -378,7 +432,7 @@ Craig, I. (2026). EXP019: Exact Quantum Walk Revivals on the 2×2 Torus - Comple
 \appendix
 \section{EXP017 Python Code (Broad Search)}
 
-\lstinputlisting[caption=Broad search for revivals in large cycles]{exp017_standard_shift_k12_k16_hunt_again.py}
+\lstinputlisting[caption=Broad search for revivals iconcln large cycles]{exp017_standard_shift_k12_k16_hunt_again.py}
 
 \section{EXP017b Python Code (Targeted Search with Dukes' Parameters)}
 
